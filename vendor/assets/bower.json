@@ -1,0 +1,11 @@
+{
+  "name": "dsl-generated-dependencies",
+  "dependencies": {
+    "bootstrap": "latest",
+    "angular": "1.2.13",
+    "angular-route": "latest",
+    "angular-resource": "latest",
+    "angular-mocks": "latest",
+    "angular-ui-bootstrap-bower": "latest"
+  }
+}

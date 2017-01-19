@@ -12,12 +12,13 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
-  ######## Custom Tom
 
+  ######## Custom Tom
   config.action_mailer.default_url_options = { host: '127.0.0.1', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   #####
+
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?

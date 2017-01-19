@@ -33,8 +33,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Custom gems added by Tom
-gem 'devise', '~> 4.2' #Authentication engine
-gem 'bootstrap-sass' #Authentication beautifier
+gem 'devise', '~> 4.2' # Authentication engine
+gem 'bootstrap-sass' # Authentication beautifier
+gem 'sendgrid-ruby' # Mailer shit for registration
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

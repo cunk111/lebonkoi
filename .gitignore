@@ -16,5 +16,4 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Custom Tom
-/config/environments/development.rb
+sendgrid.env

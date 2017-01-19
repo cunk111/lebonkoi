@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# lebonkoi
+projet Rails de site de bidding
+>>>>>>> 3b083fb42e67b6bd66f307adffe8f62b4d231796

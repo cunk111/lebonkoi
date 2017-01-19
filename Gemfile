@@ -36,7 +36,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2' # Authentication engine
 gem 'bootstrap-sass' # Authentication beautifier
 gem 'sendgrid-ruby' # Mailer shit for registration
-gem 'figaro' # Store every secret in a single .gitignore'd file 
+gem 'figaro' # Store every secret in a single .gitignore'd file
+gem 'bower-rails' # Front-End package management
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    p 'titi'
     @user = User.new
   end
 
@@ -25,7 +26,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
+    p @user
+    exit
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -69,6 +71,7 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.fetch(:user, {})
+    # params.fetch(:user, {})
+    params.require(:user).permit(:fname, :lname, :email, :password, :password_confirmation, :adress)
   end
 end

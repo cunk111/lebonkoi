@@ -16,7 +16,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-#sendgrid.env
+sendgrid.env
 #config/secrets.yml
 
 # Figaro: Ignore application configuration

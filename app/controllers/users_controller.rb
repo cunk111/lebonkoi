@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Devise::RegistrationsController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    p 'titi'
     @user = User.new
   end
 
@@ -25,7 +24,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    @user = User.new(sign_up_params)
     p @user
     exit
     respond_to do |format|
@@ -43,7 +42,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update(account_update_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -70,8 +69,16 @@ class UsersController < ApplicationController
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def user_params
-    # params.fetch(:user, {})
-    params.require(:user).permit(:fname, :lname, :email, :password, :password_confirmation, :adress)
+  # def user_params
+  #   # params.fetch(:user, {})
+  #   params.require(:user).permit(:fname, :lname, :email, :password, :password_confirmation, :adress)
+  # end
+
+  def sign_up_params
+    params.require(:user).permit(:fname, :lname, :address, :email, :password, :password_confirmation)
+  end
+
+  def account_update_params
+    params.require(:user).permit(:fname, :lname, :email, :address, :password, :password_confirmation, :current_password)
   end
 end

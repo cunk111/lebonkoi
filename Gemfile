@@ -34,10 +34,16 @@ gem 'jbuilder', '~> 2.5'
 
 # Custom gems added by Tom
 gem 'devise', '~> 4.2' # Authentication engine
-gem 'bootstrap-sass' # Authentication beautifier
+gem 'bootstrap-sass' # Preprocessed stylesheet
 gem 'sendgrid-ruby' # Mailer shit for registration
 gem 'figaro' # Store every secret in a single .gitignore'd file
 gem 'bower-rails' # Front-End package management
+gem 'carrierwave', '~> 1.0' # File uploader for Profile pics
+gem 'omniauth' # Login with ...
+gem 'omniauth-facebook' #... Facebook
+gem 'omniauth-google' #...Google
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

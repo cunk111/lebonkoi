@@ -5,5 +5,6 @@ class ApplicationController < ActionController::Base
 
   def overload_devise_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:fname, :lname, :address, :email, :password, :password_confirmation) }
+    # devise_parameter_sanitizer.permit(:edit) { |u| u.permit(:fname, :lname, :address, :email, :password, :password_confirmation) }
   end
 end

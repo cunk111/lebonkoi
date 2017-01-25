@@ -25,8 +25,6 @@ class UsersController < Devise::RegistrationsController
   # POST /users.json
   def create
     @user = User.new(sign_up_params)
-    p @user
-    exit
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
@@ -67,12 +65,6 @@ class UsersController < Devise::RegistrationsController
   def set_user
     @user = User.find(params[:id])
   end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  # def user_params
-  #   # params.fetch(:user, {})
-  #   params.require(:user).permit(:fname, :lname, :email, :password, :password_confirmation, :adress)
-  # end
 
   def sign_up_params
     params.require(:user).permit(:fname, :lname, :address, :email, :password, :password_confirmation)

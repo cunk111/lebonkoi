@@ -2,7 +2,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @product.user %>
+  <%= @product.user.fname %> <%= @product.user.lname %>
 </p>
 
 <p>
@@ -17,22 +17,22 @@
 
 <p>
   <strong>Min price:</strong>
-  <%= @product.min_price %>
+  <%= @product.min_price %> $
 </p>
 
 <p>
   <strong>Bid amount:</strong>
-  <%= @product.bid_amount %>
+  <%= @product.bid_amount %> $
 </p>
 
 <p>
   <strong>Current bid:</strong>
-  <%= @product.current_bid %>
+  <%= @product.current_bid %> $
 </p>
 
 <p>
   <strong>Ending:</strong>
-  <%= @product.ending %>
+  <%= @product.ending.strftime('%d/%m/%Y, %H:%M') %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

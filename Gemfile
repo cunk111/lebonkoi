@@ -43,6 +43,10 @@ gem 'omniauth' # Login with ...
 gem 'omniauth-facebook' #... Facebook
 gem 'omniauth-google' #...Google
 gem 'cancancan' # Roles/Authorisations and stuff
+gem 'ratyrate' # Rating system for Rails
+gem 'stripe' # Online payment
+gem 'paypal-sdk-rest' # Paypal online payment
+
 
 
 

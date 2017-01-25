@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :products, dependent: :destroy
 
   validates :fname, presence: true, length: { maximum: 30 }
   validates :lname, presence: true, length: { maximum: 30 }

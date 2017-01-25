@@ -42,6 +42,7 @@ gem 'carrierwave', '~> 1.0' # File uploader for Profile pics
 gem 'omniauth' # Login with ...
 gem 'omniauth-facebook' #... Facebook
 gem 'omniauth-google' #...Google
+gem 'cancancan' # Roles/Authorisations and stuff
 
 
 

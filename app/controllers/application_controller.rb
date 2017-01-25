@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:fname, :lname, :address, :email, :password, :password_confirmation) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:fname, :lname, :address, :email, :password, :password_confirmation, :current_password) }
   end
+
+  rescue_from CanCan::AccessDenied do |exception|
+   redirect_to root_url, :alert => exception.message
+ end
+ 
 end

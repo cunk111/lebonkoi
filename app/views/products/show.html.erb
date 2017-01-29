@@ -35,5 +35,10 @@
   <%= @product.ending.strftime('%d/%m/%Y, %H:%M') %>
 </p>
 
+<p>
+<strong> Rate:</strong>
+ <%= rating_for @product, 'rating', enable_half: true, half_show: true %>
+</p>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

@@ -7,9 +7,9 @@
     <tr>
       <th>User</th>
       <th>Title</th>
-      <th>Description</th>
+      <!-- <th>Description</th> -->
       <th>Current bid</th>
-      <th>Ending</th>
+      <!-- <th>Ending</th> -->
       <th>Actions</th>
     </tr>
   </thead>
@@ -17,20 +17,24 @@
   <tbody>
     <% @products.each do |product| %>
     <tr>
-      <td><%= product.user.fname %> <%= product.user.lname %></td>
+      <td><%= product.user.fname %> <!--<%= product.user.lname %> --></td>
       <td><%= product.title %></td>
-      <td><%= product.description %></td>
+      <!-- <td><%= product.description %></td> -->
       <td><%= product.current_bid %> (+<%= product.bid_amount %>$ per bid)</td>
-      <td><%= product.ending.strftime('%d/%m/%Y, %H:%M') %></td>
+      <!-- <td><%= product.ending.strftime('%d/%m/%Y, %H:%M') %></td> -->
+      <% if current_user.is_admin? || current_user.id == product.user.id %>
       <td>
-        <div class="btn-group" role="group" aria-label="Basic example">
+        <div class="btn-group btn-group-justified" role="group" aria-label="Basic example">
           <%= link_to 'Show', product, role: "button", :class => "btn btn-primary" %>
-          <% if current_user.is_admin? || current_user.id == product.user.id %>
-            <%= link_to 'Edit', edit_product_path(product), role: "button", :class => "btn btn-primary" %>
-            <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", :class => "btn btn-danger" %>
-          <% end %>
+          <%= link_to 'Edit', edit_product_path(product), role: "button", :class => "btn btn-primary" %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", :class => "btn btn-danger" %>
         </div>
       </td>
+      <% else %>
+      <td class="col-sm-3">
+        <%= link_to 'Show', product, role: "button", :class => "btn btn-primary btn-block" %>
+      </td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>

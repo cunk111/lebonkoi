@@ -9,6 +9,7 @@ end
 class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  ratyrate_rateable "rating"
 
   validates :title, presence: true, length: { maximum: 60 }
   validates :description, presence: true, length: { maximum: 1000 }
